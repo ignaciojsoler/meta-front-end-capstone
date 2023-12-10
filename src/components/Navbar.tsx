@@ -3,11 +3,11 @@ import logoType from "../assets/Logo.svg";
 import { pages } from "../data/pages";
 
 const Navbar = () => {
-    
-  const [displayMobileMenu, setDisplayMobileMenu] = useState<boolean>(true);
+
+  const [displayMobileMenu, setDisplayMobileMenu] = useState<boolean>(false);
 
   return (
-    <nav className="w-full max-w-6xl mx-auto p-8 flex justify-between items-center">
+    <nav className="w-full max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
       <a href="/" className="text-4xl font-bold relative z-10">
         <img src={logoType} alt="Logo" className="h-8" />
       </a>
@@ -29,7 +29,7 @@ const Navbar = () => {
         ></span>
         <span
           className={`w-8 h-1 bg-black relative transition-all duration-300 ${
-            displayMobileMenu ? " scale-x-0" : ""
+            displayMobileMenu ? " scale-x-0 opacity-0" : ""
           }`}
         ></span>
         <span

@@ -10,9 +10,9 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`bg-primary px-6 py-2 rounded-full flex items-center justify-center ${className}`}
+      className={`bg-primary px-6 py-2 rounded-lg flex items-center justify-center ${className}`}
     >
-      <p className="text-black font-body font-bold">{text}</p>
+      <p className="text-dark font-body font-bold">{text}</p>
     </button>
   );
 };

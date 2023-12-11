@@ -9,6 +9,13 @@ export default {
       colors: {
         'primary': '#F4CE14',
         'secondary': '#495E57',
+        'tertiary': '#EDEFEE',
+        'dark': '#333333',
+        'light': '#FFFFFF',
+        'accent': {
+          'primary': '#EE9972',
+          'secondary': '#FBDABB',
+        }
         }
       },
       fontFamily: {

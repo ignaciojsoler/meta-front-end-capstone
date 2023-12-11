@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { notEmpty } from "../helpers/validations";
+import { notEmpty, notSpecialCharacter } from "../helpers/validations";
 import Input from "./Input";
 import { UserData } from "../interfaces/interfaces";
 
@@ -20,7 +20,7 @@ const BookingForm = () => {
       <Input
         label="First Name"
         placeholder="John"
-        validationFunctions={[notEmpty]}
+        validationFunctions={[notEmpty, notSpecialCharacter]}
         onChangeText={(value) => setUserData({ ...userData, firstName: value })}
         value={userData.firstName}
       />

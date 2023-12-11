@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface InputProps {
     type?: string;
@@ -18,14 +18,18 @@ interface InputProps {
     validationFunctions = [],
   }: InputProps) => {
 
-    const validationResults = validationFunctions.map((fn) => fn(value || ""));
-    const isValid = validationResults.every(([isValid]) => isValid);
-    const errorMessages = validationResults.map(([, message]) => message).filter(Boolean);
-
-
+    const [errorMessages, setErrorMessages] = useState< string[] >([]);
+    
     useEffect(() => {
-        console.log(value);
-    }, [value])
+      const errors: string[] = [];
+      validationFunctions.forEach((validationFunction) => {
+        const [isValid, errorMessage] = validationFunction(value || "");
+        if (!isValid) {
+          errors.push(errorMessage);
+        }
+      });
+      setErrorMessages(errors);
+    }, [onChangeText]);
 
     return (
       <label className="flex flex-col">
@@ -35,14 +39,14 @@ interface InputProps {
           placeholder={placeholder}
           value={value || ""}
           onChange={(e) => onChangeText && onChangeText(e.target.value)}
-          className={`border ${isValid || value === null ? "border-gray-300" : "border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"} rounded-lg p-2`}
+          className={`border ${!errorMessages.length || value === null ? "border-gray-300" : "border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"} rounded-lg p-2`}
         />
-        {(!isValid && value) &&  (
+        {(errorMessages.length > 0 && value !== null) &&  (
           <div>
             {errorMessages.map((message, index) => (
-              <span key={index} className="text-red-500 text-sm block pt-1">
-                {message}
-              </span>
+              index === 0 && <span key={index} className="text-red-500 text-sm block pt-1">
+              {message}
+            </span>
             ))}
           </div>
         )}

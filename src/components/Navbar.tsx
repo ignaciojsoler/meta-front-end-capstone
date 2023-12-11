@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logoType from "../assets/Logo.svg";
-import { pages } from "../data/pages";
+import { navigation } from "../data/pages";
 
 const Navbar = () => {
 
@@ -13,7 +13,7 @@ const Navbar = () => {
         <img src={logoType} alt="Logo" className="h-8" />
       </a>
       <ul className="hidden lg:flex gap-8">
-        {pages.map((page) => (
+        {navigation.map((page) => (
           <li key={page.name}>
             <a href={page.href}>{page.name}</a>
           </li>
@@ -45,7 +45,7 @@ const Navbar = () => {
         }`}
       >
         <ul className="lg:hidden flex flex-col gap-4">
-          {pages.map((page) => (
+          {navigation.map((page) => (
             <li key={page.name}>
               <a href={page.href}>{page.name}</a>
             </li>

@@ -12,3 +12,10 @@ export interface Testimonial {
     name: string;
     review: string;
 }
+
+export interface UserData {
+    firstName: string | null;
+    lastName: string | null;
+    email: string | null;
+    phone: string | null;
+}

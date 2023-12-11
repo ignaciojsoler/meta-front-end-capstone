@@ -7,8 +7,9 @@ const Navbar = () => {
   const [displayMobileMenu, setDisplayMobileMenu] = useState<boolean>(false);
 
   return (
-    <nav className="w-full max-w-4xl mx-auto px-4 py-6 flex justify-between items-center">
-      <a href="/" className="text-4xl font-bold relative z-10">
+    <header className="fixed w-full bg-white z-30 shadow-lg">
+      <nav className="w-full max-w-4xl mx-auto px-4 py-6 flex justify-between items-center bg-white z-30">
+      <a href="/" className="text-4xl font-bold relative z-20">
         <img src={logoType} alt="Logo" className="h-8" />
       </a>
       <ul className="hidden lg:flex gap-8">
@@ -19,7 +20,7 @@ const Navbar = () => {
         ))}
       </ul>
       <button
-        className="flex flex-col gap-y-1 text-4xl relative z-10 lg:hidden"
+        className="flex flex-col gap-y-1 text-4xl relative z-20 lg:hidden"
         onClick={() => setDisplayMobileMenu(!displayMobileMenu)}
       >
         <span
@@ -39,7 +40,7 @@ const Navbar = () => {
         ></span>
       </button>
       <aside
-        className={`lg:hidden bg-white px-8 py-24 absolute top-0 w-full min-h-screen transition-all duration-300 ease-in-out shadow-xl ${
+        className={`lg:hidden bg-white px-8 py-24 fixed top-0 w-full min-h-screen transition-all duration-300 ease-in-out shadow-xl z-10 ${
           displayMobileMenu ? "left-0" : "-left-full"
         }`}
       >
@@ -52,6 +53,7 @@ const Navbar = () => {
         </ul>
       </aside>
     </nav>
+    </header>
   );
 };
 

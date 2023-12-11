@@ -3,7 +3,7 @@ import heroImage from "../assets/restauranfood.jpg";
 
 const Hero = () => {
   return (
-    <main className="w-full bg-secondary">
+    <main className="w-full bg-secondary pt-20">
       <section className="relative max-w-4xl mx-auto flex justify-between px-4 py-6 ">
         <header className="flex flex-col gap-y-8 max-w-lg">
           <div>

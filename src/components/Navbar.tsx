@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logoType from "../assets/Logo.svg";
 import { navigation } from "../data/pages";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -15,7 +16,7 @@ const Navbar = () => {
       <ul className="hidden lg:flex gap-8">
         {navigation.map((page) => (
           <li key={page.name}>
-            <a href={page.href} className="font-bold">{page.name}</a>
+            <Link to={page.href} className="font-bold hover:text-gray-500">{page.name}</Link>
           </li>
         ))}
       </ul>
@@ -47,7 +48,7 @@ const Navbar = () => {
         <ul className="lg:hidden flex flex-col gap-4">
           {navigation.map((page) => (
             <li key={page.name}>
-              <a href={page.href} className="font-bold">{page.name}</a>
+              <Link to={page.href} className="font-bold hover:text-gray-500">{page.name}</Link>
             </li>
           ))}
         </ul>

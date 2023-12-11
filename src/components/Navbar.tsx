@@ -7,7 +7,7 @@ const Navbar = () => {
   const [displayMobileMenu, setDisplayMobileMenu] = useState<boolean>(false);
 
   return (
-    <nav className="w-full max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+    <nav className="w-full max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
       <a href="/" className="text-4xl font-bold relative z-10">
         <img src={logoType} alt="Logo" className="h-8" />
       </a>

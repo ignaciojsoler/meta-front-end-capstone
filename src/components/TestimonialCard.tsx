@@ -3,6 +3,7 @@ import personOneImg from "../assets/person1.jpg";
 import personTwoImg from "../assets/person2.jpg";
 import personThreeImg from "../assets/person3.jpg";
 import personFourImg from "../assets/person4.jpg";
+import starIcon from "../assets/star.svg";
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -24,11 +25,19 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
     }
   };
 
+  const renderStars = () => {
+    const stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<img key={i} src={starIcon} alt="star" />);
+    }
+    return stars;
+  }
+
   return (
     <li className="flex flex-col items-start gap-y-4 bg-tertiary p-4 rounded-lg shadow-lg">
       <div className="flex items-center gap-x-2">
-        <span className=" ">Rating:</span>
         <p className="text-lg font-bold ">{rating}</p>
+        {renderStars()}
       </div>
       <div className="flex items-center gap-x-4">
         <img

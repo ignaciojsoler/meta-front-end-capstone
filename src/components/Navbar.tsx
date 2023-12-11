@@ -15,7 +15,7 @@ const Navbar = () => {
       <ul className="hidden lg:flex gap-8">
         {navigation.map((page) => (
           <li key={page.name}>
-            <a href={page.href}>{page.name}</a>
+            <a href={page.href} className="font-bold">{page.name}</a>
           </li>
         ))}
       </ul>
@@ -47,7 +47,7 @@ const Navbar = () => {
         <ul className="lg:hidden flex flex-col gap-4">
           {navigation.map((page) => (
             <li key={page.name}>
-              <a href={page.href}>{page.name}</a>
+              <a href={page.href} className="font-bold">{page.name}</a>
             </li>
           ))}
         </ul>

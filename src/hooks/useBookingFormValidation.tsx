@@ -2,7 +2,9 @@ import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import {
   isEmail,
   maxLength,
+  maxValue,
   minLength,
+  minValue,
   notEmpty,
   notSpecialCharacter,
   onlyNumbers,
@@ -15,6 +17,8 @@ const useFormValidation = () => {
     lastName: null,
     email: null,
     phone: null,
+    date: null,
+    guests: null,
   });
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
@@ -24,14 +28,16 @@ const useFormValidation = () => {
       lastName: [notEmpty, notSpecialCharacter, maxLength(20)],
       email: [isEmail],
       phone: [minLength(9), maxLength(9), onlyNumbers],
+      date: [notEmpty],
+      guests: [minValue(1), maxValue(10)]
     };
   }, []);
 
   const validateUserData = useCallback(
-    (property: string, value: string | null): boolean => {
+    (property: string, value: string | Date | number | null): boolean => {
       if (property in userDataValidations) {
         for (const validationFunction of userDataValidations[property]) {
-          const [isValid] = validationFunction(value || "");
+          const [isValid] = validationFunction(value?.toString() || "");
           if (!isValid) {
             return false;
           }

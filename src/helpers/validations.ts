@@ -25,6 +25,14 @@ export const maxLength =
     ];
   };
 
+  export const minValue = (num: number) => (value: string): [boolean, string] => {
+    return [Number(value) >= num, `Must be at least ${num}.`];
+  };
+
+  export const maxValue = (num: number) => (value: string): [boolean, string] => {
+    return [Number(value) <= num, `Must be at most ${num}.`];
+  }
+
 export const isEmail = (value: string): [boolean, string] => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return [emailRegex.test(value), "Please enter a valid email."];

@@ -49,11 +49,17 @@ const BookingForm = () => {
       label="Date"
       placeholder="12/12/2023"
       type="date"
+      validationFunctions={userDataValidations.date}
+      onChangeText={(value) => updateUserData("date", value)}
+      value={userData.date}
       />
       <Input
       label="Number of guests"
       placeholder="Select the number of guests"
       type="number"
+      validationFunctions={userDataValidations.guests}
+      onChangeText={(value) => updateUserData("guests", value)}
+      value={userData.guests}
       />
       <Button
         text="Book table"

@@ -18,6 +18,8 @@ export interface UserData {
     lastName: string | null;
     email: string | null;
     phone: string | null;
+    date: Date | null;
+    guests: number | null;
 }
 
 export interface ValidationFunction {

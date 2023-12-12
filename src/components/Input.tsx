@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 interface InputProps {
     type?: string;
     placeholder?: string;
-    value?: string | null;
+    value?: string | Date | number | null;
     onChangeText?: (text: string) => void;
     label?: string;
     validationFunctions?: ((value: string) => [boolean, string])[];
@@ -24,7 +24,7 @@ interface InputProps {
       const errors: string[] = [];
       if (value === null) return;
       validationFunctions.forEach((validationFunction) => {
-        const [isValid, errorMessage] = validationFunction(value || "");
+        const [isValid, errorMessage] = validationFunction(value?.toString() || "");
         if (!isValid) {
           errors.push(errorMessage);
         }
@@ -38,7 +38,7 @@ interface InputProps {
         <input
           type={type}
           placeholder={placeholder}
-          value={value || ""}
+          value={value?.toString() || ""}
           onChange={(e) => onChangeText && onChangeText(e.target.value)}
           className={`border ${!errorMessages.length || value === null ? "border-gray-300" : "border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"} rounded-lg p-2`}
         />

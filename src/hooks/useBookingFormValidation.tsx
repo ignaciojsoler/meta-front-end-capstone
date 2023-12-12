@@ -5,6 +5,7 @@ import {
   minLength,
   notEmpty,
   notSpecialCharacter,
+  onlyNumbers,
 } from "../helpers/validations";
 import { UserData, UserDataValidations } from "../interfaces/interfaces";
 
@@ -22,7 +23,7 @@ const useFormValidation = () => {
       firstName: [notEmpty, notSpecialCharacter, maxLength(20)],
       lastName: [notEmpty, notSpecialCharacter, maxLength(20)],
       email: [isEmail],
-      phone: [minLength(9), maxLength(9)],
+      phone: [minLength(9), maxLength(9), onlyNumbers],
     };
   }, []);
 
@@ -43,6 +44,7 @@ const useFormValidation = () => {
 
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(userData);
   };
 
   useEffect(() => {

@@ -29,3 +29,8 @@ export const isEmail = (value: string): [boolean, string] => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return [emailRegex.test(value), "Please enter a valid email."];
 };
+
+export const onlyNumbers = (value: string): [boolean, string] => {
+  const onlyNumbersRegex = /^[0-9]+$/;
+  return [onlyNumbersRegex.test(value), "Value must contain only numbers"];
+}

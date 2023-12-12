@@ -1,5 +1,6 @@
 import Input from "./Input";
 import useFormValidation from "../hooks/useBookingFormValidation";
+import Button from "./Button";
 
 const BookingForm = () => {
 
@@ -43,6 +44,12 @@ const BookingForm = () => {
         validationFunctions={userDataValidations.phone}
         onChangeText={(value) => updateUserData("phone", value)}
         value={userData.phone}
+      />
+      <Button
+        text="Book table"
+        onClick={() => {}}
+        disabled={!isFormValid}
+        className="col-span-2"
       />
     </form>
   );

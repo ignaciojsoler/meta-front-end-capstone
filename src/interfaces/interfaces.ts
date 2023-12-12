@@ -20,6 +20,8 @@ export interface UserData {
     phone: string | null;
     date: Date | null;
     guests: number | null;
+    time: string | null;
+    ocassion: string | null;
 }
 
 export interface ValidationFunction {

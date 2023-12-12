@@ -60,6 +60,22 @@ const BookingForm = () => {
         onChangeText={(value) => updateUserData("guests", value)}
         value={userData.guests}
       />
+      <Input
+      label="Time"
+      type="select"
+      options={["18:00", "19:00", "20:00", "21:00", "22:00"]}
+      validationFunctions={userDataValidations.time}
+      onChangeText={(value) => updateUserData("time", value)}
+      value={userData.time}
+      />
+      <Input
+      label="Occasion"
+      type="select"
+      options={["Birthday", "Anniversary", "Engagement", "Other"]}
+      validationFunctions={userDataValidations.ocassion}
+      onChangeText={(value) => updateUserData("ocassion", value)}
+      value={userData.ocassion}
+      />
       <Button
         text="Book table"
         onClick={() => {}}

@@ -19,6 +19,8 @@ const useFormValidation = () => {
     phone: null,
     date: null,
     guests: null,
+    time: null,
+    ocassion: null,
   });
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
@@ -29,7 +31,9 @@ const useFormValidation = () => {
       email: [isEmail],
       phone: [minLength(9), maxLength(9), onlyNumbers],
       date: [notEmpty],
-      guests: [minValue(1), maxValue(10)]
+      guests: [minValue(1), maxValue(10)],
+      time: [notEmpty],
+      ocassion: [notEmpty],
     };
   }, []);
 

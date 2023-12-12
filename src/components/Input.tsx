@@ -29,9 +29,8 @@ interface InputProps {
           errors.push(errorMessage);
         }
       });
-      console.log(errors);
       setErrorMessages(errors);
-    }, [value]);
+    }, [validationFunctions, value]);
 
     return (
       <label className="flex flex-col">

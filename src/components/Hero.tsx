@@ -1,7 +1,11 @@
 import Button from "./Button";
 import heroImage from "../assets/restauranfood.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+
+  const navigateTo = useNavigate();
+
   return (
     <main className="w-full bg-secondary pt-20">
       <section className="relative max-w-4xl mx-auto flex justify-between px-4 py-6 ">
@@ -16,7 +20,7 @@ const Hero = () => {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <Button text="Reserve a table" onClick={() => {}} className="w-fit" />
+          <Button text="Reserve a table" onClick={() => {navigateTo("/reservations")}} className="w-fit" />
         </header>
         <img
           src={heroImage}

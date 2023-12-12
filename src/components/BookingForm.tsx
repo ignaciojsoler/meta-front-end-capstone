@@ -22,7 +22,7 @@ const BookingForm = ( { onSubmit }: BookingFormProps) => {
 
   return (
     <form
-      className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:max-w-2xl gap-4 py-6 "
+      className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:max-w-2xl gap-4 py-6 "
       onSubmit={handleSubmit}
     >
       <Input

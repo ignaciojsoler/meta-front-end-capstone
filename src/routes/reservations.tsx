@@ -6,16 +6,13 @@ import { useState } from "react";
 import Loader from "../components/Loader";
 
 const Reservations = () => {
-
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const navigateTo = useNavigate();
-  const {
-    handleFormSubmit,
-  } = useFormValidation();
+  const { handleFormSubmit } = useFormValidation();
 
   const onSubmit = async (userData: UserData) => {
-    setIsLoading(true);  
+    setIsLoading(true);
     try {
       const response = await handleFormSubmit(userData);
       if (response) {
@@ -29,17 +26,14 @@ const Reservations = () => {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 pt-32 pb-6">
-      <h2 className="text-5xl font-bold font-heading text-center">Reservations</h2>
-      {
-        isLoading ? (
-          <Loader/>
-        ) : (
-          <BookingForm onSubmit={onSubmit}/>
-        )
-      }
+    <section className="min-h-screen px-4 pt-32 pb-6 flex flex-col items-center justify-center md:py-0">
+      <h2 className="text-5xl font-bold font-heading text-center">
+        Reservations
+      </h2>
+      <BookingForm onSubmit={onSubmit} />
+      {isLoading && <Loader />}
     </section>
-  )
-}
+  );
+};
 
 export default Reservations;

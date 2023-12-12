@@ -22,14 +22,16 @@ interface InputProps {
     
     useEffect(() => {
       const errors: string[] = [];
+      if (value === null) return;
       validationFunctions.forEach((validationFunction) => {
         const [isValid, errorMessage] = validationFunction(value || "");
         if (!isValid) {
           errors.push(errorMessage);
         }
       });
+      console.log(errors);
       setErrorMessages(errors);
-    }, [onChangeText]);
+    }, [value]);
 
     return (
       <label className="flex flex-col">

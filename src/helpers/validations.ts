@@ -7,6 +7,24 @@ export const notSpecialCharacter = (value: string): [boolean, string] => {
   return [regex.test(value), "Please enter a valid name."];
 };
 
+export const minLength =
+  (num: number) =>
+  (value: string): [boolean, string] => {
+    return [
+      value.trim().length >= num,
+      `Please enter at least ${num} characters.`,
+    ];
+  };
+
+export const maxLength =
+  (num: number) =>
+  (value: string): [boolean, string] => {
+    return [
+      value.trim().length <= num,
+      `Please limit your input to ${num} characters or less.`,
+    ];
+  };
+
 export const isEmail = (value: string): [boolean, string] => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return [emailRegex.test(value), "Please enter a valid email."];

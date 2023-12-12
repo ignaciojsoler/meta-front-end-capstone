@@ -9,6 +9,7 @@ import Root from './routes/root';
 import ErrorPage from './routes/error-page';
 import Home from './routes/home';
 import Reservations from './routes/reservations';
+import Confirmation from './routes/confirmation';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "reservations",
         element: <Reservations/>
+      },
+      {
+        path: "confirmation",
+        element: <Confirmation/>
       },
       {
         path: "*",

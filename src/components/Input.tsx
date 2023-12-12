@@ -33,6 +33,7 @@ const Input = ({
       }
     });
     setErrorMessages(errors);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (
@@ -51,15 +52,16 @@ const Input = ({
           } rounded-lg p-2`}
         />
       ) : (
-       <select className="border border-gray-300 rounded-lg p-2" onChange={(e) => onChangeText && onChangeText(e.target.value)}>
-         {
-          options?.map((option, index) => (
+        <select
+          className="border border-gray-300 rounded-lg p-2"
+          onChange={(e) => onChangeText && onChangeText(e.target.value)}
+        >
+          {options?.map((option, index) => (
             <option key={index} value={option}>
               {option}
             </option>
-          ))
-         }
-       </select>
+          ))}
+        </select>
       )}
       {errorMessages.length > 0 && value !== null && (
         <div>

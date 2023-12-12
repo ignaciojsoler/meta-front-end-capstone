@@ -1,6 +1,5 @@
-import React from "react";
-
 const Loader = () => {
+  
   return (
     <div className="fixed top-0 left-0 min-w-full min-h-screen bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-30">
       <svg

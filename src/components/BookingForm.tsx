@@ -14,7 +14,7 @@ const BookingForm = () => {
 
   return (
     <form
-      className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 py-6 lg:max-w-2xl"
+      className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:max-w-2xl gap-4 py-6 "
       onSubmit={handleFormSubmit}
     >
       <Input
@@ -45,11 +45,21 @@ const BookingForm = () => {
         onChangeText={(value) => updateUserData("phone", value)}
         value={userData.phone}
       />
+      <Input
+      label="Date"
+      placeholder="12/12/2023"
+      type="date"
+      />
+      <Input
+      label="Number of guests"
+      placeholder="Select the number of guests"
+      type="number"
+      />
       <Button
         text="Book table"
         onClick={() => {}}
         disabled={!isFormValid}
-        className="col-span-2"
+        className="col-span-1 md:col-span-2"
       />
     </form>
   );

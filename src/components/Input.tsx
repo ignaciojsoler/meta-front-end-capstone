@@ -30,7 +30,7 @@ interface InputProps {
         }
       });
       setErrorMessages(errors);
-    }, [validationFunctions, value]);
+    }, [value]);
 
     return (
       <label className="flex flex-col">

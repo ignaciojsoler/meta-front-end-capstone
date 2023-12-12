@@ -13,7 +13,7 @@ const Button = (props: ButtonProps) => {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`px-6 py-2 rounded-lg flex items-center justify-center transition duration-200 
+      className={`px-6 py-2 rounded-lg flex items-center justify-center shadow-md transition duration-200 
       ${type === "primary" ? "bg-primary" : "bg-secondary"} 
       ${disabled ? "opacity-50" : " hover:brightness-105"}
       ${className}`}

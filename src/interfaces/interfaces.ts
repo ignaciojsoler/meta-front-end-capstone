@@ -19,3 +19,11 @@ export interface UserData {
     email: string | null;
     phone: string | null;
 }
+
+export interface ValidationFunction {
+    (value: string): [boolean, string];
+  }
+  
+export interface UserDataValidations {
+    [key: string]: ValidationFunction[];
+  }

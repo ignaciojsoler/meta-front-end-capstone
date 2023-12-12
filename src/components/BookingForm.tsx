@@ -1,20 +1,29 @@
 import Input from "./Input";
 import useFormValidation from "../hooks/useBookingFormValidation";
 import Button from "./Button";
+import { UserData } from "../interfaces/interfaces";
 
-const BookingForm = () => {
+interface BookingFormProps {
+  onSubmit: (userData: UserData) => Promise<void>;
+}
+
+const BookingForm = ( { onSubmit }: BookingFormProps) => {
   const {
     userData,
     isFormValid,
-    handleFormSubmit,
     updateUserData,
     userDataValidations,
   } = useFormValidation();
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(userData)
+  };
+
   return (
     <form
       className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:max-w-2xl gap-4 py-6 "
-      onSubmit={handleFormSubmit}
+      onSubmit={handleSubmit}
     >
       <Input
         label="First Name"
@@ -63,6 +72,7 @@ const BookingForm = () => {
       <Input
       label="Time"
       type="select"
+      placeholder="Select the time"
       options={["18:00", "19:00", "20:00", "21:00", "22:00"]}
       validationFunctions={userDataValidations.time}
       onChangeText={(value) => updateUserData("time", value)}
@@ -70,6 +80,7 @@ const BookingForm = () => {
       />
       <Input
       label="Occasion"
+      placeholder="Select the occasion"
       type="select"
       options={["Birthday", "Anniversary", "Engagement", "Other"]}
       validationFunctions={userDataValidations.ocassion}

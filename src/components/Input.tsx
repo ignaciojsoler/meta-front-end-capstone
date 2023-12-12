@@ -12,7 +12,7 @@ interface InputProps {
 
 const Input = ({
   type,
-  placeholder = "Input a value",
+  placeholder,
   value,
   onChangeText,
   label = "Label",
@@ -55,7 +55,11 @@ const Input = ({
         <select
           className="border border-gray-300 rounded-lg p-2"
           onChange={(e) => onChangeText && onChangeText(e.target.value)}
+          value={value?.toString() || ""}
         >
+          <option value="" disabled>
+            {placeholder}
+          </option>
           {options?.map((option, index) => (
             <option key={index} value={option}>
               {option}

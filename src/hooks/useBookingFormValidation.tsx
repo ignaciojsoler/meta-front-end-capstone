@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   isEmail,
   maxLength,
@@ -52,9 +52,22 @@ const useFormValidation = () => {
     [userDataValidations]
   );
 
-  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(userData);
+  const handleFormSubmit = async (userData: UserData): Promise<boolean> => {
+    try {
+      await new Promise(resolve => setTimeout(() => {
+        sessionStorage.setItem("userData", JSON.stringify(userData));
+        resolve(true);
+      }, 2000));
+  
+      const isSuccess = Math.random() < 1;
+      if (isSuccess) {
+        return true;
+      } else {
+        throw new Error("Server error");
+      }
+    } catch (error) {
+      throw new Error("An error occurred while submitting the form");
+    }
   };
 
   useEffect(() => {

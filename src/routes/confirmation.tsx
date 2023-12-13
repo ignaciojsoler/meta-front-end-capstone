@@ -12,18 +12,17 @@ const Confirmation = () => {
   }, []);
 
   return (
-    <section className="min-h-screen max-w-4xl mx-auto flex flex-col items-center justify-center">
+    <section className="min-h-screen mx-auto flex flex-col items-center justify-center w-full max-w-4xl">
       {userData ? (
-        <>
-          <h2 className=" font-heading text-4xl font-semibold">
-            Booking Confirmation
-          </h2>
+        <div className="w-full px-4 py-32">
           <OrderDetails userData={userData} />
-        </>
+        </div>
       ) : (
-        <h2 className="text-5xl font-bold font-heading text-center">
-          Oops, something went wrong :(
-        </h2>
+        <>
+        <h1 className='text-6xl font-heading text-center'> Oops! </h1>
+         <h2 className='text-2xl'>Something went wrong :(</h2>
+        </>
+         
       )}
     </section>
   );

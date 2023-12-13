@@ -2,7 +2,7 @@ type ButtonProps = {
   text: string;
   onClick: () => void;
   className?: string;
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "dark";
   disabled?: boolean;
 };
 
@@ -14,11 +14,11 @@ const Button = (props: ButtonProps) => {
       onClick={onClick}
       disabled={disabled}
       className={`px-6 py-2 rounded-lg flex items-center justify-center shadow-md transition duration-200 
-      ${type === "primary" ? "bg-primary" : "bg-secondary"} 
-      ${disabled ? "opacity-50" : " hover:brightness-105"}
+      ${type === "primary" ? "bg-primary" : type === "dark" ? "bg-dark" : "bg-secondary"} 
+      ${disabled ? "opacity-50" : " hover:brightness-110"}
       ${className}`}
     >
-      <p className="text-dark font-body font-bold">{text}</p>
+      <p className={`font-body font-bold ${type === "dark" ? "text-white" : "text-dark" }`}>{text}</p>
     </button>
   );
 };

@@ -16,7 +16,7 @@ export interface Testimonial {
 export interface UserData {
     firstName: string | null;
     lastName: string | null;
-    email: string | null;
+    email?: string | null;
     phone: string | null;
     date: Date | null;
     guests: number | null;

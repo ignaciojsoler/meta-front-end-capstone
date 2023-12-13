@@ -24,6 +24,9 @@ const BookingForm = ( { onSubmit }: BookingFormProps) => {
     <form
       className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:max-w-2xl gap-4 py-6 "
       onSubmit={handleSubmit}
+      autoComplete="on"
+      spellCheck="false"
+      name="booking-form"
     >
       <Input
         label="First Name"

@@ -40,5 +40,5 @@ export const isEmail = (value: string): [boolean, string] => {
 
 export const onlyNumbers = (value: string): [boolean, string] => {
   const onlyNumbersRegex = /^[0-9]+$/;
-  return [onlyNumbersRegex.test(value), "Value must contain only numbers"];
+  return [onlyNumbersRegex.test(value), "Value must contain only numbers."];
 }

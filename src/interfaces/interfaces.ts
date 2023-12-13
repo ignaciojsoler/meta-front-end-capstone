@@ -12,3 +12,22 @@ export interface Testimonial {
     name: string;
     review: string;
 }
+
+export interface UserData {
+    firstName: string | null;
+    lastName: string | null;
+    email?: string | null;
+    phone: string | null;
+    date: Date | null;
+    guests: number | null;
+    time: string | null;
+    ocassion: string | null;
+}
+
+export interface ValidationFunction {
+    (value: string): [boolean, string];
+  }
+  
+export interface UserDataValidations {
+    [key: string]: ValidationFunction[];
+  }

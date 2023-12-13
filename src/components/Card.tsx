@@ -23,7 +23,7 @@ const Card = ({ product }: CardProps) => {
   };
 
   return (
-    <article className="relative rounded-xl overflow-hidden max-w-sm bg-tertiary">
+    <article className="relative rounded-xl overflow-hidden max-w-sm bg-tertiary shadow-sm">
       <img src={getImage()} alt={name} className=" object-cover w-full h-56" />
       <div className="px-4 py-6 space-y-6 ">
         <div className="flex items-center justify-between">

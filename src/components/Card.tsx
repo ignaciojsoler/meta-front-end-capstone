@@ -1,6 +1,6 @@
 import { Product } from "../interfaces/interfaces";
 import greekSaladImg from "../assets/greek-salad.jpg";
-import bruchettaImg from "../assets/bruchetta.svg";
+import bruchettaImg from "../assets/bruchetta.jpg";
 import lemonDessertImg from "../assets/lemon-dessert.jpg";
 import deliveryIcon from "../assets/delivery-icon.svg";
 

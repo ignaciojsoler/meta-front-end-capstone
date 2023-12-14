@@ -1,5 +1,5 @@
-import restaurantImg from "../assets/restaurant.jpg";
-import restaurantChefImg from "../assets/restaurant-chef.jpg";
+import restaurantImg from "../assets/restaurant.webp";
+import restaurantChefImg from "../assets/restaurant-chef.webp";
 
 const About = () => {
   return (

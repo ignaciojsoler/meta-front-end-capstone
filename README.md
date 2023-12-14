@@ -30,10 +30,13 @@ In the project directory, you can run:
 The npm install command is used to install all the dependencies defined in your project's package.json file.
 
 - npm run dev
+
 Runs the app in development mode.
 Open http://localhost:5173 to view it in your browser.
 
 - npm run test
+
 Launches the test runner in the interactive watch mode. It runs all the tests for the application and provides feedback on their status.
+
 
 Make sure to write comprehensive tests to ensure the stability and correctness of the application.

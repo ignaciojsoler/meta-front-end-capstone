@@ -26,7 +26,7 @@ const Reservations = () => {
   };
 
   return (
-    <section className="min-h-screen px-4 pt-32 pb-6 flex flex-col items-center justify-center md:py-0">
+    <section className="min-h-screen px-4 pt-32 pb-6 flex flex-col items-center justify-center">
       <h2 className="text-5xl font-bold font-heading text-center">
         Reservations
       </h2>

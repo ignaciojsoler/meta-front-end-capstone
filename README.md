@@ -18,7 +18,8 @@ Check out the live version of the website: https://meta-front-end-capstone-ignac
 This project was developed using the following technologies:
 
 - HTML: Used for the structure of the web pages
-- CSS: Used for styling the web pages
+- Tailwindcss: Used for styling the web pages
+- Typescript: Used for logic
 - React hooks: Used to manage state and handle user interactions
 
 ## Getting started

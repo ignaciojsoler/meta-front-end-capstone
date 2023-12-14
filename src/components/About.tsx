@@ -12,12 +12,12 @@ const About = () => {
         </p>
       </div>
       <div className="relative rounded-lg w-full">
-        <img
+        <img loading="lazy"
           src={restaurantImg}
           alt="Restaurant"
           className="rounded-lg object-cover absolute right-4 w-1/2 h-72 shadow-xl"
         />
-        <img
+        <img loading="lazy"
           src={restaurantChefImg}
           alt="Restaurant Chef"
           className="rounded-lg object-cover relative top-12 left-4 w-1/2 h-72 shadow-xl"

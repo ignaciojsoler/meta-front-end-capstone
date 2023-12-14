@@ -10,7 +10,7 @@ const Navbar = () => {
     <header className="fixed w-full bg-white z-30 shadow-lg">
       <nav className="w-full max-w-4xl mx-auto px-4 py-6 flex justify-between items-center bg-white z-30">
         <a href="/" className="text-4xl font-bold relative z-20">
-          <img src={logoType} alt="Logo" className="h-8" />
+          <img loading="lazy" src={logoType} alt="Logo" className="h-8" />
         </a>
         <ul className="hidden lg:flex gap-8">
           {navigation.map((page) => (

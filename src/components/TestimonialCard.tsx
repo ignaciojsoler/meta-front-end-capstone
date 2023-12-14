@@ -28,7 +28,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<img key={i} src={starIcon} alt="star" />);
+      stars.push(<img loading="lazy" key={i} src={starIcon} alt="star" />);
     }
     return stars;
   }
@@ -40,7 +40,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         {renderStars()}
       </div>
       <div className="flex items-center gap-x-4">
-        <img
+        <img loading="lazy"
           src={getImage()}
           alt={name}
           className="w-12 h-12 rounded-full object-cover"

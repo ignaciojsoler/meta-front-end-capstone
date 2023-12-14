@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
           <Button text="Reserve a table" onClick={() => {navigateTo("/reservations")}} className="w-fit" />
         </header>
-        <img
+        <img loading="lazy"
           src={heroImage}
           alt="Restaurant food"
           className="hidden lg:block absolute right-0 h-96 w-96 object-cover rounded-xl"

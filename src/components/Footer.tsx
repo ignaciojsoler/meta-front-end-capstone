@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <div className="w-full bg-dark">
       <footer className="w-full max-w-4xl mx-auto px-8 py-6 flex flex-col items-center gap-y-8 md:flex-row md:items-start md:justify-between md:gap-y-4">
-        <img src={logoType} alt="Logo" className="h-16 w-auto self-center" />
+        <img loading="lazy" src={logoType} alt="Logo" className="h-16 w-auto self-center" />
         {
             footerSections.map((section) => (
                 <div key={section.title}>

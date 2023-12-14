@@ -47,7 +47,7 @@ const OrderDetails = ({ userData }: OrderDetailsProps) => {
       <h1 className="text-green-600 font-heading text-4xl text-center font-semibold">
         Reservation Successful
       </h1>
-      <img src={successIcon} alt="Success icon" className="h-40" />
+      <img loading="lazy" src={successIcon} alt="Success icon" className="h-40" />
       <p className="text-black text-center text-xl font-semibold">
         Your table has been booked!
       </p>

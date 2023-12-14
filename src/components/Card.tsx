@@ -24,14 +24,14 @@ const Card = ({ product }: CardProps) => {
 
   return (
     <article className="relative rounded-xl overflow-hidden max-w-sm bg-tertiary shadow-sm">
-      <img src={getImage()} alt={name} className=" object-cover w-full h-56" />
+      <img loading="lazy" src={getImage()} alt={name} className=" object-cover w-full h-56" />
       <div className="px-4 py-6 space-y-6 ">
         <div className="flex items-center justify-between">
           <h3 className="text-2xl font-heading font-bold">{name}</h3>
           <p className="font-bold text-accent-primary">{price}</p>
         </div>
         <p>{description}</p>
-        <p className="relative bottom-0 font-bold">Order a delivery <img src={deliveryIcon} alt="Delivery icon" className="inline-block w-4 h-4 ml-2"/></p>
+        <p className="relative bottom-0 font-bold">Order a delivery <img loading="lazy" src={deliveryIcon} alt="Delivery icon" className="inline-block w-4 h-4 ml-2"/></p>
       </div>
     </article>
   );

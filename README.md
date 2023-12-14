@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# Little Lemon Restaurant Online Reservation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Little Lemon Restaurant Online Reservation System! This project is the capstone for the Meta Front End Development course and has been developed using React hooks, HTML, and CSS.
 
-Currently, two official plugins are available:
+Live Demo: https://meta-front-end-capstone-ignaciosoler.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- View restaurant information, including an overview, special menu items, and testimonials.
+- Check available reservation times for a chosen date and party size.
+- Make a reservation by selecting a desired time slot and entering contact information.
+- Clean and intuitive user interface design.
+- Responsive design for optimal viewing on various devices.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+This project was developed using the following technologies:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- HTML: Used for the structure of the web pages
+- CSS: Used for styling the web pages
+- React hooks: Used to manage state and handle user interactions
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+

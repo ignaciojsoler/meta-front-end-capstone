@@ -38,7 +38,7 @@ const useFormValidation = () => {
   }, []);
 
   const validateUserData = useCallback(
-    (property: string, value: string | Date | number | null): boolean => {
+    (property: string, value: string | Date | number | null | undefined): boolean => {
       if (property in userDataValidations) {
         for (const validationFunction of userDataValidations[property]) {
           const [isValid] = validationFunction(value?.toString() || "");
